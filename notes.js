@@ -1,4 +1,12 @@
-var noteList = function(array) {
+function NoteList(array = []) {
+  this.noteList = array
+}
+
+NoteList.prototype.getNoteList = function() {
+  return this.notelist
+}
+
+var updateNoteList = function(array) {
   var list = document.getElementById("notesList")
   if (list.childNodes.length > 0) {
     while (list.firstChild) {
@@ -15,3 +23,5 @@ var noteList = function(array) {
     document.getElementById("notesList").appendChild(br);
   })
 }
+
+var newlist = new NoteList(['Tim', 'Kareem'])
