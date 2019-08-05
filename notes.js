@@ -1,7 +1,10 @@
 var noteList = function(array) {
   var list = document.getElementById("notesList")
-  console.log(list.childNodes)
-  // list.removeChild(list.childNodes)
+  if (list.childNodes.length > 0) {
+    while (list.firstChild) {
+    list.removeChild(list.firstChild);
+    }
+  }
   array.forEach(function(note, index){
     var div = document.createElement('div');
     var br = document.createElement('br');
@@ -11,5 +14,4 @@ var noteList = function(array) {
     document.getElementById("notesList").appendChild(div);
     document.getElementById("notesList").appendChild(br);
   })
-  console.log(list)
 }
