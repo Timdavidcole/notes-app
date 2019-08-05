@@ -4,12 +4,14 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="./styles.css">
   <script src="notes.js"></script>
+  <script src="note.js"></script>
 </head>
 
 <body>
-  <button onclick="updateNoteList(['Tim', 'Kareem', 'Zi'])">Update List</button>
-  <div id='notesList'></div>
-  <script>updateNoteList(newlist.noteList)</script>
+  <center><textarea id="newNoteText" class="textarea" rows = "5" cols = "50" name="note-content" placeholder="Enter your note..."></textarea></form>
+  <br><button onclick="newlist.addNote()">Add Note</button>
+  <div id='notesList'></div></center>
+  <script>newlist.updateNoteList(newlist.noteList)</script>
 </body>
 
 </html>

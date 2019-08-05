@@ -3,20 +3,27 @@ function NoteList(array = []) {
 }
 
 NoteList.prototype.getNoteList = function() {
-  return this.notelist
+  return this.noteList
 }
 
-var updateNoteList = function(array) {
+NoteList.prototype.addNote = function(content) {
+  var newNote = new Note(document.getElementById('newNoteText').value)
+  this.noteList.push(newNote)
+  this.updateNoteList()
+  document.getElementById('newNoteText').value = '';
+}
+
+NoteList.prototype.updateNoteList = function() {
   var list = document.getElementById("notesList")
   if (list.childNodes.length > 0) {
     while (list.firstChild) {
     list.removeChild(list.firstChild);
     }
   }
-  array.forEach(function(note, index){
+  this.noteList.forEach(function(note, index){
     var div = document.createElement('div');
     var br = document.createElement('br');
-    div.innerHTML = note;
+    div.innerHTML = note.title;
     div.setAttribute("id", "note_" + index);
     div.setAttribute("class", "note_small");
     document.getElementById("notesList").appendChild(div);
@@ -24,4 +31,4 @@ var updateNoteList = function(array) {
   })
 }
 
-var newlist = new NoteList(['Tim', 'Kareem'])
+var newlist = new NoteList()
