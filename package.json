@@ -1,0 +1,26 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "feature_tests_spec.js",
+  "dependencies": {
+    "chromedriver": "^76.0.0",
+    "selenium-webdriver": "^4.0.0-alpha.4"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.0"
+  },
+  "scripts": {
+    "feature_tests_spec": "mocha --recursive --timeout 10000 feature_tests_spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Timdavidcole/notes-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Timdavidcole/notes-app/issues"
+  },
+  "homepage": "https://github.com/Timdavidcole/notes-app#readme"
+}
