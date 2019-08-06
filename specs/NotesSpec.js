@@ -1,5 +1,10 @@
-describe('This test', function(){
+describe("This test", function(){
   it('does a simple test', function(){
-    expect(1).toEqual(1)
+    expect(1).to(eq(1));
+  })
+})
+describe("This test", function(){
+  it('does a simple includes test', function(){
+    expect([1,2,3,4]).to(include(3));
   })
 })

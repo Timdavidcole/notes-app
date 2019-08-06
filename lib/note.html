@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+Notes
+
+
+</head>
+<body>
+  <script>
+  function Note(content){
+        this.content = content;
+        //this.title = content.length<20 ? content : content.substr(0,20);
+      }
+
+  var notearr = [];
+
+  function CreateNote() {
+    notearr.push(document.getElementById('form2')[0].value);
+    console.log(notearr)
+  }
+  </script>
+
+<form id="form2" action = "#" onsubmit="CreateNote();return false">
+         Fill the Detail:
+         <br />
+
+         <textarea rows = "5" cols = "50" name = "note-content">
+            Enter your note
+         </textarea>
+
+         <!-- <input type = "submit" value = "submit" /> -->
+         <button form="form2" id="button" onclick="CreateNote();" type="button" value="send" class="btn btn-primary">Submit</button>
+      </form>
+      <!-- <form id="form1" action="#" onsubmit="CreateAndStoreNote();return false"><input type="number" id="score" name="score" min="0" max="10"><br><button id="button" onclick="gameFunction()" type="button" value="send" class="btn btn-primary">Submit</button></form> -->
+
+
+</body>
+
+</html>
