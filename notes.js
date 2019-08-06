@@ -9,11 +9,11 @@ NoteList.prototype.getNoteList = function() {
 NoteList.prototype.addNote = function(content) {
   var newNote = new Note(document.getElementById('newNoteText').value)
   this.noteList.push(newNote)
-  this.updateNoteList()
+  this.updateNoteList(newNote)
   document.getElementById('newNoteText').value = '';
 }
 
-NoteList.prototype.updateNoteList = function() {
+NoteList.prototype.updateNoteList = function(note) {
   var list = document.getElementById("notesList")
   if (list.childNodes.length > 0) {
     while (list.firstChild) {
@@ -21,11 +21,15 @@ NoteList.prototype.updateNoteList = function() {
     }
   }
   this.noteList.forEach(function(note, index){
+    var content = note.content
     var div = document.createElement('div');
     var br = document.createElement('br');
     div.innerHTML = note.title;
     div.setAttribute("id", "note_" + index);
     div.setAttribute("class", "note_small");
+    div.onclick = function () {
+      this.innerHTML = content
+    }
     document.getElementById("notesList").appendChild(div);
     document.getElementById("notesList").appendChild(br);
   })
