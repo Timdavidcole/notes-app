@@ -1,9 +1,13 @@
-const describe = function(string, fn) {
+var SpecHelper = function() {
+
+}
+
+SpecHelper.prototype.describe = function(string, fn) {
   console.log(string);
   fn()
 }
 
-var it = function(string, fn) {
+SpecHelper.prototype.it = function(string, fn) {
   console.log(string);
   fn()
 }
@@ -62,3 +66,4 @@ Includes.prototype.compare = function(tocompare) {
 // Typeof.prototype.compare = function(tocompare) {
 //   if
 // }
+
