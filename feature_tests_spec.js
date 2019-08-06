@@ -1,20 +1,23 @@
 require('chromedriver');
 const assert = require('assert');
 const {Builder, Key, By, until} = require('selenium-webdriver');
-describe('Checkout Google.com', function () {
+describe('Add note', function () {
   let driver;
   before(async function() {
     driver = await new Builder().forBrowser('chrome').build();
   });
 
-  it('Search on Google', async function() {
-    await driver.get('http://www.postoffice.co.uk');
-    await driver.findElement(By.id('head-search')).sendKeys('Hey James!', Key.RETURN);
-    // await driver.findElement(By.id('tsf')).click();
-    await driver.wait(until.elementLocated(By.id('rcnt')), 10000);
+  it('Adds a new note', async function() {
+    // in line below, replace file path with your own file path
+    await driver.get('file:///Users/student/Projects/notes-app/notes.html');
+    await driver.findElement(By.id('newNoteText')).sendKeys('Hey Kareem!');
+    await driver.findElement(By.id('addnotebutton')).click();
+    await driver.wait(until.elementLocated(By.id('note_0')), 10000);
 
-    let title = await driver.getTitle();
-    assert.equal(title, 'cat - Google search');
+    let note = await driver.findElement(By.id('note_0')).getAttribute('textContent');
+    // let note = await driver.getElementById('note_0').value;
+    console.log(note)
+    assert.equal(note, 'Hey Kareem!');
   });
   after(() => driver && driver.quit());
 });

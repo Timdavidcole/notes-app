@@ -32,14 +32,6 @@ In this project, since we are avoiding using pre-built APIs (excluding Selenium 
 
 Therefore the following steps are necessary in order to run automated feature tests of the website:
 
-In the project directory root, run the following:
-```
-npm init
-```
-Press enter for each of the prompts that follow, in order to accept the default options.
-This will build the package.json file.
-
-Then run:
 ```
 npm add chromedriver selenium-webdriver
 
