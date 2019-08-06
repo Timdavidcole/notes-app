@@ -36,6 +36,7 @@ NoteList.prototype.updateNoteList = function(note) {
         return this.innerHTML = content
       }
     }
+    div.contentEditable = "true";
     document.getElementById("notesList").appendChild(div);
     document.getElementById("notesList").appendChild(br);
   })
