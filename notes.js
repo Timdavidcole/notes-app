@@ -22,13 +22,19 @@ NoteList.prototype.updateNoteList = function(note) {
   }
   this.noteList.forEach(function(note, index){
     var content = note.content
+    var title = note.title
     var div = document.createElement('div');
     var br = document.createElement('br');
     div.innerHTML = note.title;
     div.setAttribute("id", "note_" + index);
     div.setAttribute("class", "note_small");
     div.onclick = function () {
-      this.innerHTML = content
+      if (this.innerHTML === content) {
+        return this.innerHTML = title
+      }
+      else {
+        return this.innerHTML = content
+      }
     }
     document.getElementById("notesList").appendChild(div);
     document.getElementById("notesList").appendChild(br);
