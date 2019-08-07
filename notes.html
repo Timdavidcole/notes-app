@@ -8,10 +8,16 @@
 </head>
 
 <body>
-  <center><textarea id="newNoteText" class="textarea" rows = "5" cols = "50" name="note-content" placeholder="Enter your note..."></textarea></form>
-  <br><button onclick="newlist.addNote()">Add Note</button>
+  <center>
+    <div id="new_note">
+      <h2 id="new_note_title">Add a new note:
+      </h2>
+        <textarea id="newNoteText" rows = "12" columns = "40" name="note-content" placeholder="Enter text here..."></textarea>
+        <br>
+        <button id="new_note_button" onclick="newlist.addNote()">Add Note</button>
+    </div>
+  </centre>
   <div id='notesList'></div></center>
-  <script>newlist.updateNoteList(newlist.noteList)</script>
 </body>
 
 </html>

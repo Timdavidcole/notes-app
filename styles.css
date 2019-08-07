@@ -1,9 +1,49 @@
 .note_small {
-  border: 2px solid black;
-  border-radius: 3px;
+  position: absolute;
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  height:15em;
+  width:15em;
+  box-shadow: 3px 3px 3px 3px #888888;
+
+}
+
+body {
+  position: relative;
+}
+
+#new_note {
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  height:15em;
+  width:15em;
+  box-shadow: 3px 3px 3px 3px #888888;
+  position:relative;
+  z-index: 50;
+}
+
+
+#new_note_title {
+  position: absolute;
+  left: 10px;
+  bottom: 185px;
+}
+
+#new_note_button {
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+}
+
+#newNoteText {
+  background:#ffc;
+  position: absolute;
+  left: 20px;
+  bottom: 40px;
+  border: none;
   width: 200px;
 }
 
-.textarea {
-  background-color: #f3f5d3;
-}
+#newNoteText:focus {outline:0;}

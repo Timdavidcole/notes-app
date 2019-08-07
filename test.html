@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+
+</head>
+
+<body>
+  <div id="output">Nothing yet!</div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <script>
+
+  function getRegionForPostcode(postcode, callMeWhenYouGetTheRegion) {
+    var url = "https://api.postcodes.io/postcodes/" + postcode;
+    $.get(url, function(response) {
+      var region = response.result.region;
+      callMeWhenYouGetTheRegion(region)
+    });
+  }
+
+  function showRegion() {
+    var outputElement = document.querySelector("#output");
+    var region = getRegionForPostcode("E16LT", function(region) {
+      outputElement.innerText = region;
+    });
+  }
+
+showRegion();
+</script>
+</body>
+
+</html>
